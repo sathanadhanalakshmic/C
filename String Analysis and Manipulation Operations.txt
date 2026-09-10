@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+int main()
+{
+   int len,ch,i,t,j,c1=0,c2=0,c3=0;
+   char a[50];
+   printf("Enter the string1:");
+   scanf("%[^\n]",a);
+   len=strlen(a);
+   printf("Enter the choice:");
+   scanf("%d",&ch);
+   switch(ch)
+   {
+      case 1:
+         printf("Length of the string:%d",len);
+         break;
+      case 2:
+         for(i=0,j=len-1;i<j;i++,j--)
+         {
+            t=a[i];
+            a[i]=a[j];
+            a[j]=t;
+         }
+         printf("%s",a);
+         break;
+      case 3:
+         for(i=0;a[i]!='\0';i++)
+         {
+            if(isalpha(a[i])!=0)
+                  c1++;
+            if(isdigit(a[i])!=0)
+                  c2++;
+            if(ispunct(a[i])!=0)
+                  c3++;
+         }
+         printf("Number of alpha:%d\nNumber of digits:%d\nNumber of special characters:%d\n",c1,c2,c3);
+         break;
+   }
+}
