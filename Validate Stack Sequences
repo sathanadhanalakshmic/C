@@ -1,0 +1,14 @@
+bool validateStackSequences(int* pushed, int pushedSize, int* popped, int poppedSize) {
+    int i = 0, j = 0, top = 0;
+
+    while (i < pushedSize) {
+        pushed[top++] = pushed[i++]; 
+
+        while (top > 0 && pushed[top - 1] == popped[j]) {
+            top--;  
+            j++;
+        }
+    }
+
+    return top == 0;  // Stack should be empty if valid
+}
