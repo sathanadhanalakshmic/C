@@ -10,5 +10,5 @@ bool validateStackSequences(int* pushed, int pushedSize, int* popped, int popped
         }
     }
 
-    return top == 0;  // Stack should be empty if valid
+    return top == 0;
 }
